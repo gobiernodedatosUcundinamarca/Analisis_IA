@@ -1,0 +1,15 @@
+# Excel original de la encuesta: NO se publica. En el repositorio va Encuesta_IA_anonimizada.xlsx
+# (generado con anonimizar_encuesta.py).
+/Encuesta diagnóstica*.xlsx
+~$*.xlsx
+
+# Python y Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# Basura de macOS dentro de los recursos de marca
+__MACOSX/
+.DS_Store
+
+# Configuración local de Claude Code (personal, no del proyecto)
+.claude/settings.local.json
