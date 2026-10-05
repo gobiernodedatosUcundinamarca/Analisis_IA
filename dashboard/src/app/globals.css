@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/*
+ * Tokens institucionales — fuente: .claude/reglas/REGLAS_VISUALES_UCUNDINAMARCA.md (§1.8 y §3.6).
+ * No usar HEX sueltos en componentes: referenciar estos tokens.
+ */
+:root {
+  /* Paleta principal oficial */
+  --uc-yellow: #fbe122;
+  --uc-gold: #daaa00;
+  --uc-green: #007b3e;
+  --uc-green-dark: #00482b;
+
+  /* Paleta secundaria oficial */
+  --uc-orange: #f7931e;
+  --uc-lime: #79c000;
+  --uc-green-light: #91c256;
+  --uc-turquoise: #00a99d;
+  --uc-gray-dark: #4d4d4d;
+
+  /* Neutros técnicos */
+  --uc-white: #ffffff;
+  --uc-black: #000000;
+  --uc-background: #f7f7f5;
+  --uc-surface: #ffffff;
+  --uc-border: #d9ddd9;
+  --uc-text: #2b2b2b;
+  --uc-text-secondary: #666666;
+
+  /* Aplicación */
+  --uc-color-primary: var(--uc-green);
+  --uc-color-primary-dark: var(--uc-green-dark);
+  --uc-color-accent: var(--uc-yellow);
+  --uc-color-accent-dark: var(--uc-gold);
+  --uc-color-primary-hover: var(--uc-green-dark);
+  --uc-focus-ring: rgba(0, 123, 62, 0.28);
+
+  /* Tipografía */
+  --uc-font-digital: var(--font-montserrat), "Century Gothic", Arial, sans-serif;
+  --uc-line-height-body: 1.5;
+
+  /*
+   * Gráficas — derivadas solo de los tokens anteriores (un color principal y un complemento por vista).
+   * Validadas con el script validate_palette.js de la guía de visualización:
+   *   serie-1 (verde institucional) para barras y columnas de una sola serie.
+   *   escala-1..5 (rampa ordinal verde): monótona, saltos de luminosidad >= 0,06, extremo claro 2,17:1.
+   */
+  --chart-serie-1: var(--uc-green);
+  --escala-1: color-mix(in srgb, var(--uc-green) 50%, white);
+  --escala-2: color-mix(in srgb, var(--uc-green) 70%, white);
+  --escala-3: color-mix(in srgb, var(--uc-green) 85%, white);
+  --escala-4: var(--uc-green);
+  --escala-5: var(--uc-green-dark);
+  --chart-pista: color-mix(in srgb, var(--uc-green) 7%, white);
+  --chart-rejilla: var(--uc-border);
+}
+
+@theme inline {
+  --color-uc-yellow: var(--uc-yellow);
+  --color-uc-gold: var(--uc-gold);
+  --color-uc-green: var(--uc-green);
+  --color-uc-green-dark: var(--uc-green-dark);
+  --color-uc-gray-dark: var(--uc-gray-dark);
+  --color-uc-white: var(--uc-white);
+  --color-uc-background: var(--uc-background);
+  --color-uc-surface: var(--uc-surface);
+  --color-uc-border: var(--uc-border);
+  --color-uc-text: var(--uc-text);
+  --color-uc-text-secondary: var(--uc-text-secondary);
+  --font-sans: var(--uc-font-digital);
+}
+
+html {
+  background: var(--uc-background);
+}
+
+body {
+  background: var(--uc-background);
+  color: var(--uc-text);
+  font-family: var(--uc-font-digital);
+  line-height: var(--uc-line-height-body);
+}
+
+/* Foco visible en todo elemento interactivo (accesibilidad, regla de layouts §17). */
+:where(a, button, summary, input, [tabindex]):focus-visible {
+  outline: 3px solid var(--uc-focus-ring);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Cifras alineadas en tablas y ejes; los números grandes conservan cifras proporcionales. */
+.cifras-tabulares {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
