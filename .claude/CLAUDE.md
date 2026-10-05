@@ -102,3 +102,5 @@ Las reglas se enlazan entre sí y son coherentes en lo esencial. Puntos a tener 
 6. [`settings.json`](settings.json) restringe `Bash(npm:*)`, `Bash(npx:*)` y `Bash(yarn:*)`, pero no los mismos comandos lanzados desde PowerShell.
 7. La regla de layouts exige una portada de temas y un enlace «Volver a temas». Por decisión del usuario el tablero no tiene portada
    ([ADR 0005](../dashboard/docs/adr/0005-sin-portada-y-cuatro-vistas.md)); si se agregan más temas habrá que reintroducirla.
+8. La regla visual §2.2 reserva el escudo para usos simbólicos. Por decisión del usuario, el ícono de la pestaña del navegador
+   (`dashboard/src/app/icon.png`) es el escudo a color oficial, sin alterar; el identificador de la interfaz sigue siendo el imagotipo.

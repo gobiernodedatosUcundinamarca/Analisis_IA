@@ -10,6 +10,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/); v
 - Cuatro apartados numerados: 1. Síntesis del diagnóstico, 2. Nivel de uso y competencias, 3. Brechas y requerimientos, y 4. Metodología y
   ficha técnica (con el cálculo del índice de apropiación).
 - Filtrado cruzado desde las gráficas, con los filtros reflejados en la URL, chips de filtros activos y «Limpiar filtros».
+- Ícono del navegador con el escudo a color de la Universidad (`src/app/icon.png` y `apple-icon.png`).
 - Script `pnpm datos` que genera el JSON anonimizado desde el Excel, y pruebas de los cálculos con Vitest.
 - Documentación: README, guía maestra en `.claude/CLAUDE.md`, `docs/` y ADR 0001–0005.
 
